@@ -8,7 +8,20 @@
        http://www.springframework.org/schema/context
        http://www.springframework.org/schema/context/spring-context-4.0.xsd">
        
-       <bean id ="car" class="be.kanea.project.springcorexml.Car" ></bean>
+       <bean id ="car" class="be.kanea.project.springcorexml.Car" autowire="byType">
+       		<!-- Add variable with reference to another object -->
+       		<!-- to connect this class (imlements fuel) use autowire="byType" above
+       		     since we have 2 implementations add  primary="true" below in the right bean
+       		     or <property name="fuel" ref="diesel" ></property>-->	
+            <!-- <property name="fuel" ref="diesel" ></property>  -->
+            
+            
+            <!--  since name = ref = idRef I can use autowire="byName" above
+                  you can also use autowire="byType" since tyre is a Tyre -->
+            <!-- <property name="tyre" ref="tyre" ></property> -->
+       </bean>
+       <!--  By default you have only one instance. With prototype we have a new object for each call 
+       <bean id ="car" class="be.kanea.project.springcorexml.Car" scope="prototype" ></bean> -->
        <bean id ="tyre" class="be.kanea.project.springcorexml.Tyre" >
 	   	
 			<!-- It is a Constructor injection because Tyre(String brand) is used -->
@@ -19,6 +32,8 @@
 			<!-- <property name="brand" value="Continental by spring.xml"></property> --> 
 	   
        </bean>
+       <bean id ="diesel" class="be.kanea.project.springcorexml.Diesel" primary="true"></bean>
+       <bean id ="gasoline" class="be.kanea.project.springcorexml.Gasoline" ></bean>
        
        <context:component-scan base-package="be.kanea.project.springcorexml"></context:component-scan>
        

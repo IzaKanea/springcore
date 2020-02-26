@@ -1,5 +1,7 @@
 package be.kanea.project.springcore;
 
+import java.util.logging.Logger;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
@@ -18,7 +20,11 @@ public class Car implements Vehicle{
 	@Autowired
 	private Tyre tyre;
 	
+
 	
+	public Car() {
+		//
+	}
 	/*  Interface "Fuel"
 	 *  @Qualifier : when only one class implements the interface
 	 *  @Qualifier("diesel") : chose your class  when more than one implements the interface
