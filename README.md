@@ -10,3 +10,7 @@
  
  Find here the annotations used : @Component, @Primary, @Autowired, @Qualifier, @Configuration and @ComponentScan
 </p>
+<h4>Project</h4>
+<img src="./Images/project.png" height="300px;" target="_blank" alt="reverse polish notation">
+<h4>Class Diagram</h4>
+<img src="./Images/ClassDiagram.png" height="400px;" target="_blank" alt="reverse polish notation">
